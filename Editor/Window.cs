@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Editor
 {
@@ -88,6 +89,20 @@ namespace Editor
         private void fileMenuItemExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textArea_TextChanged(object sender, EventArgs e)
+        {
+            Regex reg = new Regex(@"<(\w*)|(\s*)>");
+            int select = this.textArea.SelectionStart;
+
+            foreach(Match rg in reg.Matches(this.textArea.Text))
+            {
+                this.textArea.Select(rg.Index, rg.Value.Length);
+                this.textArea.SelectionColor = Color.Red;
+                this.textArea.SelectionStart = select;
+                this.textArea.SelectionColor = Color.White;
+            }
         }
     }
 }

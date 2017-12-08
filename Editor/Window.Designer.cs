@@ -60,13 +60,10 @@
             this.helpMenuItemSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.helpMenuItemAboutProgram = new System.Windows.Forms.ToolStripMenuItem();
-            this.textArea = new System.Windows.Forms.RichTextBox();
-            this.panelTextArea = new System.Windows.Forms.Panel();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.textArea = new System.Windows.Forms.RichTextBox();
             this.mainMenu.SuspendLayout();
-            this.panelTextArea.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -334,36 +331,17 @@
             this.textArea.AcceptsTab = true;
             this.textArea.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textArea.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textArea.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textArea.ForeColor = System.Drawing.Color.White;
-            this.textArea.Location = new System.Drawing.Point(20, 15);
+            this.textArea.Location = new System.Drawing.Point(0, 24);
             this.textArea.Margin = new System.Windows.Forms.Padding(25);
             this.textArea.Name = "textArea";
-            this.textArea.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.textArea.Size = new System.Drawing.Size(744, 512);
-            this.textArea.TabIndex = 1;
+            this.textArea.Size = new System.Drawing.Size(784, 537);
+            this.textArea.TabIndex = 2;
             this.textArea.Text = "";
-            this.textArea.UseWaitCursor = true;
-            // 
-            // panelTextArea
-            // 
-            this.panelTextArea.BackColor = System.Drawing.Color.Transparent;
-            this.panelTextArea.Controls.Add(this.textArea);
-            this.panelTextArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTextArea.Location = new System.Drawing.Point(0, 24);
-            this.panelTextArea.Name = "panelTextArea";
-            this.panelTextArea.Padding = new System.Windows.Forms.Padding(20, 15, 20, 10);
-            this.panelTextArea.Size = new System.Drawing.Size(784, 537);
-            this.panelTextArea.TabIndex = 2;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(769, 24);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(15, 537);
-            this.vScrollBar1.TabIndex = 3;
+            this.textArea.TextChanged += new System.EventHandler(this.textArea_TextChanged);
             // 
             // Window
             // 
@@ -371,9 +349,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.panelTextArea);
+            this.Controls.Add(this.textArea);
             this.Controls.Add(this.mainMenu);
+            this.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
             this.Name = "Window";
@@ -383,7 +361,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Window_FormClosed);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
-            this.panelTextArea.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,13 +397,11 @@
         private System.Windows.Forms.ToolStripMenuItem helpMenuItemSearch;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem helpMenuItemAboutProgram;
-        private System.Windows.Forms.RichTextBox textArea;
-        private System.Windows.Forms.Panel panelTextArea;
         private System.Windows.Forms.ToolStripMenuItem fileMenuItemNewWindow;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.RichTextBox textArea;
     }
 }
 
